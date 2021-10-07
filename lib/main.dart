@@ -1,8 +1,6 @@
-// import 'package:callback/Model/grid_view.dart';
+
 import 'package:callback/Bottom%20Navigation/bottom_navigation.dart';
-import 'package:callback/Model/Cartoon.dart';
-import 'package:callback/list_view.dart';
-import 'package:callback/list_tile.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,13 +16,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home:
-          //CartoonGrid(),
-          //FlowerList(),
-          navigation(),
-      //ListView2(),
-      // GridViewDemo(),
-      //MyHomePage(),
+      home: navigation(),
+
     );
   }
 }

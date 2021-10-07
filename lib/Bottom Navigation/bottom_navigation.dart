@@ -1,5 +1,6 @@
 import 'package:callback/Model/grid_view.dart';
 import 'package:callback/list_tile.dart';
+import 'package:callback/list_view.dart';
 import 'package:flutter/material.dart';
 
 class navigation extends StatefulWidget {
@@ -18,7 +19,7 @@ class _navigationState extends State<navigation> {
     CurrentIndex = widget.CurrentIndex;
     super.initState();
     widgets.add(ListView2());
-    widgets.add(GridViewDemo());
+    widgets.add(FlowerList());
   }
 
   @override
