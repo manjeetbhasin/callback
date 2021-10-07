@@ -1,16 +1,15 @@
-import 'package:callback/Model/model_data.dart';
-// import 'package:callback/list_tile.dart';
+import 'package:callback/Model/modell.dart';
 import 'package:flutter/material.dart';
 
-class GridViewDemo extends StatefulWidget {
-  const GridViewDemo({Key? key}) : super(key: key);
+class CartoonGrid extends StatefulWidget {
+  const CartoonGrid({Key? key}) : super(key: key);
 
   @override
-  _GridViewDemoState createState() => _GridViewDemoState();
+  _CartoonGridState createState() => _CartoonGridState();
 }
 
-class _GridViewDemoState extends State<GridViewDemo> {
-  List<ModelDemo> myList = arrModelData();
+class _CartoonGridState extends State<CartoonGrid> {
+  List<ModellDemo> myList = arrModelData();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

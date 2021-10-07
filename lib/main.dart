@@ -1,5 +1,7 @@
-
-import 'package:callback/Model/grid_view.dart';
+// import 'package:callback/Model/grid_view.dart';
+import 'package:callback/Bottom%20Navigation/bottom_navigation.dart';
+import 'package:callback/Model/Cartoon.dart';
+import 'package:callback/list_view.dart';
 import 'package:callback/list_tile.dart';
 import 'package:flutter/material.dart';
 
@@ -16,41 +18,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: ListView2(),
-     // GridViewDemo(),
+      home:
+          //CartoonGrid(),
+          //FlowerList(),
+          navigation(),
+      //ListView2(),
+      // GridViewDemo(),
       //MyHomePage(),
     );
   }
 }
-
-// class MyHomePage extends StatefulWidget {
-//   MyHomePage({Key? key}) : super(key: key);
-//
-//
-//   @override
-//   _MyHomePageState createState() => _MyHomePageState();
-// }
-//
-// class _MyHomePageState extends State<MyHomePage> {
-//
-//
-//   @override
-//   Widget build(BuildContext context) {
-//
-//     return Scaffold(
-//         appBar: AppBar(
-//
-//         title: Text('Grid Demo'),
-//     ),
-//     body: Column(
-//               children:[
-//                 ListviewScreen(),
-//                 ListView2(,
-//               ],
-//
-//             ),
-//     );
-//
-//   }
-// }
-

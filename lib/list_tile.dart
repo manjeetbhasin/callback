@@ -1,3 +1,5 @@
+import 'package:callback/Model/Cartoon.dart';
+import 'package:callback/Model/modell.dart';
 import 'package:flutter/material.dart';
 
 class ListView2 extends StatefulWidget {
@@ -8,170 +10,29 @@ class ListView2 extends StatefulWidget {
 }
 
 class _ListView2State extends State<ListView2> {
-  List myList=List.generate(50, (index) => "data $index ");
+  List<ModellDemo> myList = arrModelData();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("List View"),
-      ),
-      body: NormalView(),
-    );
-  }
-}
-
-class NormalView extends StatelessWidget {
-  const NormalView({Key? key,}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: [
-                ListTile(
+        body: ListView.builder(
+            itemCount: myList.length,
+            itemBuilder: (ctx, intMan) {
+              return ListTile(
+                trailing: Icon(Icons.star),
+                title: Text(myList[intMan].title ?? ""),
+                subtitle: Text(myList[intMan].subtitle ?? ""),
                 leading: CircleAvatar(
-                  backgroundColor: Colors.blue,
-                  child: Text("Mn"),
+                  child: Image.network(
+                    myList[intMan].image ?? "",
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                trailing: Icon(Icons.computer),
-                title: Text("Manjeet Kaur"),
-                subtitle: Text("Flutter Developer"),
-                  onTap: (){
-                  print("Welcome Manjeet");
-                  },
-            ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.lightGreen,
-            child: Text("Hs"),
-          ),
-          trailing: Icon(Icons.computer),
-          title: Text("Harsh Shah"),
-          subtitle: Text("Flutter Developer"),
-          onTap: (){
-            print("Welcome Harsh Shah");
-          },
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.orangeAccent,
-            child: Text("Na"),
-          ),
-          trailing: Icon(Icons.computer),
-          title: Text("Naman Sir"),
-          subtitle: Text("Flutter Developer"),
-          onTap: (){
-            print("Welcome Naman Sir");
-          },
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.purpleAccent,
-            child: Text("Bh"),
-          ),
-          trailing: Icon(Icons.computer),
-          title: Text("Bhargav Sir"),
-          subtitle: Text("Flutter Developer"),
-          onTap: (){
-            print("Welcome Bhargav Sir");
-          },
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.blue,
-            child: Text("Mn"),
-          ),
-          trailing: Icon(Icons.computer),
-          title: Text("Manjeet Kaur"),
-          subtitle: Text("Flutter Developer"),
-          onTap: (){
-            print("Welcome Manjeet");
-          },
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.lightGreen,
-            child: Text("Hs"),
-          ),
-          trailing: Icon(Icons.computer),
-          title: Text("Harsh Shah"),
-          subtitle: Text("Flutter Developer"),
-          onTap: (){
-            print("Welcome Harsh Shah");
-          },
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.orangeAccent,
-            child: Text("Na"),
-          ),
-          trailing: Icon(Icons.computer),
-          title: Text("Naman Sir"),
-          subtitle: Text("Flutter Developer"),
-          onTap: (){
-            print("Welcome Naman Sir");
-          },
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.purpleAccent,
-            child: Text("Bh"),
-          ),
-          trailing: Icon(Icons.computer),
-          title: Text("Bhargav Sir"),
-          subtitle: Text("Flutter Developer"),
-          onTap: (){
-            print("Welcome Bhargav Sir");
-          },
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.blue,
-            child: Text("Mn"),
-          ),
-          trailing: Icon(Icons.computer),
-          title: Text("Manjeet Kaur"),
-          subtitle: Text("Flutter Developer"),
-          onTap: (){
-            print("Welcome Manjeet");
-          },
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.lightGreen,
-            child: Text("Hs"),
-          ),
-          trailing: Icon(Icons.computer),
-          title: Text("Harsh Shah"),
-          subtitle: Text("Flutter Developer"),
-          onTap: (){
-            print("Welcome Harsh Shah");
-          },
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.orangeAccent,
-            child: Text("Na"),
-          ),
-          trailing: Icon(Icons.computer),
-          title: Text("Naman Sir"),
-          subtitle: Text("Flutter Developer"),
-          onTap: (){
-            print("Welcome Naman Sir");
-          },
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.purpleAccent,
-            child: Text("Bh"),
-          ),
-          trailing: Icon(Icons.computer),
-          title: Text("Bhargav Sir"),
-          subtitle: Text("Flutter Developer"),
-          onTap: (){
-            print("Welcome Bhargav Sir");
-          },
-        ),
-         ] );
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => CartoonGrid()));
+                },
+              );
+            }));
   }
 }
